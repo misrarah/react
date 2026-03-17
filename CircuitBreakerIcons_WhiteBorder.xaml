@@ -3,23 +3,17 @@
 
     <!--
         Circuit Breaker Icon Resources
-        ════════════════════════════════════════════════════════
         ViewBox: 0,0,90,95
-        Bolt polygon: 38,0 14,52 34,52 22,90 66,34 44,34 (closed)
-        Badge position: cx=74, top-edge y=0, radius=10
-
         Usage:
             <Button Style="{StaticResource CbArmedButton}"/>
             <Button Style="{StaticResource CbIndicativeButton}"/>
             <Button Style="{StaticResource CbTrippedButton}"/>
-
         Size override:
             <Button Style="{StaticResource CbArmedButton}" Width="40" Height="40"/>
-        ════════════════════════════════════════════════════════
     -->
 
     <!-- ════════════════════════════════════════════════════════
-         ARMED  —  green bolt + white halo + solid green circle
+         ARMED  —  solid green bolt + white halo + green circle
          ════════════════════════════════════════════════════════ -->
     <DrawingBrush x:Key="CbArmedBrush"
                   Stretch="Uniform"
@@ -28,7 +22,7 @@
         <DrawingBrush.Drawing>
             <DrawingGroup>
 
-                <!-- white halo — drawn first, slightly thicker -->
+                <!-- white halo -->
                 <GeometryDrawing>
                     <GeometryDrawing.Pen>
                         <Pen Brush="White" Thickness="8"
@@ -47,8 +41,8 @@
                     </GeometryDrawing.Geometry>
                 </GeometryDrawing>
 
-                <!-- coloured bolt stroke on top -->
-                <GeometryDrawing>
+                <!-- solid filled bolt -->
+                <GeometryDrawing Brush="#3B6D11">
                     <GeometryDrawing.Pen>
                         <Pen Brush="#3B6D11" Thickness="5"
                              LineJoin="Round" StartLineCap="Round" EndLineCap="Round"/>
@@ -66,7 +60,7 @@
                     </GeometryDrawing.Geometry>
                 </GeometryDrawing>
 
-                <!-- badge: white halo circle -->
+                <!-- badge: white halo -->
                 <GeometryDrawing>
                     <GeometryDrawing.Pen>
                         <Pen Brush="White" Thickness="3"/>
@@ -88,7 +82,7 @@
     </DrawingBrush>
 
     <!-- ════════════════════════════════════════════════════════
-         INDICATIVE  —  amber bolt + white halo + warning triangle
+         INDICATIVE  —  solid amber bolt + white halo + triangle
          ════════════════════════════════════════════════════════ -->
     <DrawingBrush x:Key="CbIndicativeBrush"
                   Stretch="Uniform"
@@ -116,8 +110,8 @@
                     </GeometryDrawing.Geometry>
                 </GeometryDrawing>
 
-                <!-- coloured bolt stroke -->
-                <GeometryDrawing>
+                <!-- solid filled bolt -->
+                <GeometryDrawing Brush="#EF9F27">
                     <GeometryDrawing.Pen>
                         <Pen Brush="#EF9F27" Thickness="5"
                              LineJoin="Round" StartLineCap="Round" EndLineCap="Round"/>
@@ -150,10 +144,10 @@
                     </GeometryDrawing.Geometry>
                 </GeometryDrawing>
 
-                <!-- badge: triangle fill -->
-                <GeometryDrawing Brush="#FAC775">
+                <!-- badge: solid amber triangle -->
+                <GeometryDrawing Brush="#EF9F27">
                     <GeometryDrawing.Pen>
-                        <Pen Brush="#BA7517" Thickness="1.5" LineJoin="Round"/>
+                        <Pen Brush="#EF9F27" Thickness="1.5" LineJoin="Round"/>
                     </GeometryDrawing.Pen>
                     <GeometryDrawing.Geometry>
                         <PathGeometry>
@@ -168,18 +162,18 @@
                 <!-- exclamation bar -->
                 <GeometryDrawing>
                     <GeometryDrawing.Pen>
-                        <Pen Brush="#633806" Thickness="1.8"
+                        <Pen Brush="White" Thickness="2"
                              StartLineCap="Round" EndLineCap="Round"/>
                     </GeometryDrawing.Pen>
                     <GeometryDrawing.Geometry>
-                        <LineGeometry StartPoint="74,6" EndPoint="74,13"/>
+                        <LineGeometry StartPoint="74,5" EndPoint="74,13"/>
                     </GeometryDrawing.Geometry>
                 </GeometryDrawing>
 
                 <!-- exclamation dot -->
-                <GeometryDrawing Brush="#633806">
+                <GeometryDrawing Brush="White">
                     <GeometryDrawing.Geometry>
-                        <EllipseGeometry Center="74,16.5" RadiusX="1.2" RadiusY="1.2"/>
+                        <EllipseGeometry Center="74,16.5" RadiusX="1.5" RadiusY="1.5"/>
                     </GeometryDrawing.Geometry>
                 </GeometryDrawing>
 
@@ -188,7 +182,7 @@
     </DrawingBrush>
 
     <!-- ════════════════════════════════════════════════════════
-         TRIPPED  —  red bolt + white halo + no-entry circle
+         TRIPPED  —  solid red bolt + white halo + no-entry badge
          ════════════════════════════════════════════════════════ -->
     <DrawingBrush x:Key="CbTrippedBrush"
                   Stretch="Uniform"
@@ -216,8 +210,8 @@
                     </GeometryDrawing.Geometry>
                 </GeometryDrawing>
 
-                <!-- coloured bolt stroke -->
-                <GeometryDrawing>
+                <!-- solid filled bolt -->
+                <GeometryDrawing Brush="#E24B4A">
                     <GeometryDrawing.Pen>
                         <Pen Brush="#E24B4A" Thickness="5"
                              LineJoin="Round" StartLineCap="Round" EndLineCap="Round"/>
@@ -235,18 +229,15 @@
                     </GeometryDrawing.Geometry>
                 </GeometryDrawing>
 
-                <!-- badge: white halo behind circle -->
-                <GeometryDrawing>
-                    <GeometryDrawing.Pen>
-                        <Pen Brush="White" Thickness="5"/>
-                    </GeometryDrawing.Pen>
+                <!-- badge: white filled circle (background for badge) -->
+                <GeometryDrawing Brush="White">
                     <GeometryDrawing.Geometry>
-                        <EllipseGeometry Center="74,10" RadiusX="10" RadiusY="10"/>
+                        <EllipseGeometry Center="74,10" RadiusX="12" RadiusY="12"/>
                     </GeometryDrawing.Geometry>
                 </GeometryDrawing>
 
-                <!-- badge: outline circle -->
-                <GeometryDrawing>
+                <!-- badge: solid red filled circle -->
+                <GeometryDrawing Brush="#E24B4A">
                     <GeometryDrawing.Pen>
                         <Pen Brush="#E24B4A" Thickness="2.5"/>
                     </GeometryDrawing.Pen>
@@ -255,10 +246,10 @@
                     </GeometryDrawing.Geometry>
                 </GeometryDrawing>
 
-                <!-- badge: diagonal strike -->
+                <!-- badge: white diagonal strike through circle -->
                 <GeometryDrawing>
                     <GeometryDrawing.Pen>
-                        <Pen Brush="#E24B4A" Thickness="2.5"
+                        <Pen Brush="White" Thickness="3"
                              StartLineCap="Round" EndLineCap="Round"/>
                     </GeometryDrawing.Pen>
                     <GeometryDrawing.Geometry>
