@@ -4,6 +4,8 @@
     <!--
         Circuit Breaker Icon Resources
         ViewBox: 0,0,90,95
+        Bolt path: M38,0 L14,52 L34,52 L22,90 L66,34 L44,34 Z
+
         Usage:
             <Button Style="{StaticResource CbArmedButton}"/>
             <Button Style="{StaticResource CbIndicativeButton}"/>
@@ -29,34 +31,18 @@
                              LineJoin="Round" StartLineCap="Round" EndLineCap="Round"/>
                     </GeometryDrawing.Pen>
                     <GeometryDrawing.Geometry>
-                        <PathGeometry>
-                            <PathFigure StartPoint="38,0" IsClosed="True">
-                                <LineSegment Point="14,52"/>
-                                <LineSegment Point="34,52"/>
-                                <LineSegment Point="22,90"/>
-                                <LineSegment Point="66,34"/>
-                                <LineSegment Point="44,34"/>
-                            </PathFigure>
-                        </PathGeometry>
+                        <StreamGeometry>M38,0 L14,52 L34,52 L22,90 L66,34 L44,34 Z</StreamGeometry>
                     </GeometryDrawing.Geometry>
                 </GeometryDrawing>
 
                 <!-- solid filled bolt -->
                 <GeometryDrawing Brush="#3B6D11">
                     <GeometryDrawing.Pen>
-                        <Pen Brush="#3B6D11" Thickness="5"
+                        <Pen Brush="#3B6D11" Thickness="3"
                              LineJoin="Round" StartLineCap="Round" EndLineCap="Round"/>
                     </GeometryDrawing.Pen>
                     <GeometryDrawing.Geometry>
-                        <PathGeometry>
-                            <PathFigure StartPoint="38,0" IsClosed="True">
-                                <LineSegment Point="14,52"/>
-                                <LineSegment Point="34,52"/>
-                                <LineSegment Point="22,90"/>
-                                <LineSegment Point="66,34"/>
-                                <LineSegment Point="44,34"/>
-                            </PathFigure>
-                        </PathGeometry>
+                        <StreamGeometry>M38,0 L14,52 L34,52 L22,90 L66,34 L44,34 Z</StreamGeometry>
                     </GeometryDrawing.Geometry>
                 </GeometryDrawing>
 
@@ -98,34 +84,18 @@
                              LineJoin="Round" StartLineCap="Round" EndLineCap="Round"/>
                     </GeometryDrawing.Pen>
                     <GeometryDrawing.Geometry>
-                        <PathGeometry>
-                            <PathFigure StartPoint="38,0" IsClosed="True">
-                                <LineSegment Point="14,52"/>
-                                <LineSegment Point="34,52"/>
-                                <LineSegment Point="22,90"/>
-                                <LineSegment Point="66,34"/>
-                                <LineSegment Point="44,34"/>
-                            </PathFigure>
-                        </PathGeometry>
+                        <StreamGeometry>M38,0 L14,52 L34,52 L22,90 L66,34 L44,34 Z</StreamGeometry>
                     </GeometryDrawing.Geometry>
                 </GeometryDrawing>
 
                 <!-- solid filled bolt -->
                 <GeometryDrawing Brush="#EF9F27">
                     <GeometryDrawing.Pen>
-                        <Pen Brush="#EF9F27" Thickness="5"
+                        <Pen Brush="#EF9F27" Thickness="3"
                              LineJoin="Round" StartLineCap="Round" EndLineCap="Round"/>
                     </GeometryDrawing.Pen>
                     <GeometryDrawing.Geometry>
-                        <PathGeometry>
-                            <PathFigure StartPoint="38,0" IsClosed="True">
-                                <LineSegment Point="14,52"/>
-                                <LineSegment Point="34,52"/>
-                                <LineSegment Point="22,90"/>
-                                <LineSegment Point="66,34"/>
-                                <LineSegment Point="44,34"/>
-                            </PathFigure>
-                        </PathGeometry>
+                        <StreamGeometry>M38,0 L14,52 L34,52 L22,90 L66,34 L44,34 Z</StreamGeometry>
                     </GeometryDrawing.Geometry>
                 </GeometryDrawing>
 
@@ -135,12 +105,7 @@
                         <Pen Brush="White" Thickness="3" LineJoin="Round"/>
                     </GeometryDrawing.Pen>
                     <GeometryDrawing.Geometry>
-                        <PathGeometry>
-                            <PathFigure StartPoint="74,0" IsClosed="True">
-                                <LineSegment Point="63,19"/>
-                                <LineSegment Point="85,19"/>
-                            </PathFigure>
-                        </PathGeometry>
+                        <StreamGeometry>M74,0 L63,19 L85,19 Z</StreamGeometry>
                     </GeometryDrawing.Geometry>
                 </GeometryDrawing>
 
@@ -150,12 +115,7 @@
                         <Pen Brush="#EF9F27" Thickness="1.5" LineJoin="Round"/>
                     </GeometryDrawing.Pen>
                     <GeometryDrawing.Geometry>
-                        <PathGeometry>
-                            <PathFigure StartPoint="74,0" IsClosed="True">
-                                <LineSegment Point="63,19"/>
-                                <LineSegment Point="85,19"/>
-                            </PathFigure>
-                        </PathGeometry>
+                        <StreamGeometry>M74,0 L63,19 L85,19 Z</StreamGeometry>
                     </GeometryDrawing.Geometry>
                 </GeometryDrawing>
 
@@ -198,45 +158,29 @@
                              LineJoin="Round" StartLineCap="Round" EndLineCap="Round"/>
                     </GeometryDrawing.Pen>
                     <GeometryDrawing.Geometry>
-                        <PathGeometry>
-                            <PathFigure StartPoint="38,0" IsClosed="True">
-                                <LineSegment Point="14,52"/>
-                                <LineSegment Point="34,52"/>
-                                <LineSegment Point="22,90"/>
-                                <LineSegment Point="66,34"/>
-                                <LineSegment Point="44,34"/>
-                            </PathFigure>
-                        </PathGeometry>
+                        <StreamGeometry>M38,0 L14,52 L34,52 L22,90 L66,34 L44,34 Z</StreamGeometry>
                     </GeometryDrawing.Geometry>
                 </GeometryDrawing>
 
                 <!-- solid filled bolt -->
                 <GeometryDrawing Brush="#E24B4A">
                     <GeometryDrawing.Pen>
-                        <Pen Brush="#E24B4A" Thickness="5"
+                        <Pen Brush="#E24B4A" Thickness="3"
                              LineJoin="Round" StartLineCap="Round" EndLineCap="Round"/>
                     </GeometryDrawing.Pen>
                     <GeometryDrawing.Geometry>
-                        <PathGeometry>
-                            <PathFigure StartPoint="38,0" IsClosed="True">
-                                <LineSegment Point="14,52"/>
-                                <LineSegment Point="34,52"/>
-                                <LineSegment Point="22,90"/>
-                                <LineSegment Point="66,34"/>
-                                <LineSegment Point="44,34"/>
-                            </PathFigure>
-                        </PathGeometry>
+                        <StreamGeometry>M38,0 L14,52 L34,52 L22,90 L66,34 L44,34 Z</StreamGeometry>
                     </GeometryDrawing.Geometry>
                 </GeometryDrawing>
 
-                <!-- badge: white filled circle (background for badge) -->
+                <!-- badge: white isolation ring -->
                 <GeometryDrawing Brush="White">
                     <GeometryDrawing.Geometry>
                         <EllipseGeometry Center="74,10" RadiusX="12" RadiusY="12"/>
                     </GeometryDrawing.Geometry>
                 </GeometryDrawing>
 
-                <!-- badge: solid red filled circle -->
+                <!-- badge: solid red circle -->
                 <GeometryDrawing Brush="#E24B4A">
                     <GeometryDrawing.Pen>
                         <Pen Brush="#E24B4A" Thickness="2.5"/>
@@ -246,7 +190,7 @@
                     </GeometryDrawing.Geometry>
                 </GeometryDrawing>
 
-                <!-- badge: white diagonal strike through circle -->
+                <!-- badge: white diagonal strike -->
                 <GeometryDrawing>
                     <GeometryDrawing.Pen>
                         <Pen Brush="White" Thickness="3"
