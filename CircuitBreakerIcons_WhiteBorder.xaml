@@ -1,0 +1,363 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--
+        Circuit Breaker Icon Resources
+        ════════════════════════════════════════════════════════
+        ViewBox: 0,0,90,95
+        Bolt polygon: 38,0 14,52 34,52 22,90 66,34 44,34 (closed)
+        Badge position: cx=74, top-edge y=0, radius=10
+
+        Usage:
+            <Button Style="{StaticResource CbArmedButton}"/>
+            <Button Style="{StaticResource CbIndicativeButton}"/>
+            <Button Style="{StaticResource CbTrippedButton}"/>
+
+        Size override:
+            <Button Style="{StaticResource CbArmedButton}" Width="40" Height="40"/>
+        ════════════════════════════════════════════════════════
+    -->
+
+    <!-- ════════════════════════════════════════════════════════
+         ARMED  —  green bolt + white halo + solid green circle
+         ════════════════════════════════════════════════════════ -->
+    <DrawingBrush x:Key="CbArmedBrush"
+                  Stretch="Uniform"
+                  ViewboxUnits="Absolute"
+                  Viewbox="0,0,90,95">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+
+                <!-- white halo — drawn first, slightly thicker -->
+                <GeometryDrawing>
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="White" Thickness="8"
+                             LineJoin="Round" StartLineCap="Round" EndLineCap="Round"/>
+                    </GeometryDrawing.Pen>
+                    <GeometryDrawing.Geometry>
+                        <PathGeometry>
+                            <PathFigure StartPoint="38,0" IsClosed="True">
+                                <LineSegment Point="14,52"/>
+                                <LineSegment Point="34,52"/>
+                                <LineSegment Point="22,90"/>
+                                <LineSegment Point="66,34"/>
+                                <LineSegment Point="44,34"/>
+                            </PathFigure>
+                        </PathGeometry>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+
+                <!-- coloured bolt stroke on top -->
+                <GeometryDrawing>
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="#3B6D11" Thickness="5"
+                             LineJoin="Round" StartLineCap="Round" EndLineCap="Round"/>
+                    </GeometryDrawing.Pen>
+                    <GeometryDrawing.Geometry>
+                        <PathGeometry>
+                            <PathFigure StartPoint="38,0" IsClosed="True">
+                                <LineSegment Point="14,52"/>
+                                <LineSegment Point="34,52"/>
+                                <LineSegment Point="22,90"/>
+                                <LineSegment Point="66,34"/>
+                                <LineSegment Point="44,34"/>
+                            </PathFigure>
+                        </PathGeometry>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+
+                <!-- badge: white halo circle -->
+                <GeometryDrawing>
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="White" Thickness="3"/>
+                    </GeometryDrawing.Pen>
+                    <GeometryDrawing.Geometry>
+                        <EllipseGeometry Center="74,10" RadiusX="10" RadiusY="10"/>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+
+                <!-- badge: solid green circle -->
+                <GeometryDrawing Brush="#3B6D11">
+                    <GeometryDrawing.Geometry>
+                        <EllipseGeometry Center="74,10" RadiusX="10" RadiusY="10"/>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+    <!-- ════════════════════════════════════════════════════════
+         INDICATIVE  —  amber bolt + white halo + warning triangle
+         ════════════════════════════════════════════════════════ -->
+    <DrawingBrush x:Key="CbIndicativeBrush"
+                  Stretch="Uniform"
+                  ViewboxUnits="Absolute"
+                  Viewbox="0,0,90,95">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+
+                <!-- white halo -->
+                <GeometryDrawing>
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="White" Thickness="8"
+                             LineJoin="Round" StartLineCap="Round" EndLineCap="Round"/>
+                    </GeometryDrawing.Pen>
+                    <GeometryDrawing.Geometry>
+                        <PathGeometry>
+                            <PathFigure StartPoint="38,0" IsClosed="True">
+                                <LineSegment Point="14,52"/>
+                                <LineSegment Point="34,52"/>
+                                <LineSegment Point="22,90"/>
+                                <LineSegment Point="66,34"/>
+                                <LineSegment Point="44,34"/>
+                            </PathFigure>
+                        </PathGeometry>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+
+                <!-- coloured bolt stroke -->
+                <GeometryDrawing>
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="#EF9F27" Thickness="5"
+                             LineJoin="Round" StartLineCap="Round" EndLineCap="Round"/>
+                    </GeometryDrawing.Pen>
+                    <GeometryDrawing.Geometry>
+                        <PathGeometry>
+                            <PathFigure StartPoint="38,0" IsClosed="True">
+                                <LineSegment Point="14,52"/>
+                                <LineSegment Point="34,52"/>
+                                <LineSegment Point="22,90"/>
+                                <LineSegment Point="66,34"/>
+                                <LineSegment Point="44,34"/>
+                            </PathFigure>
+                        </PathGeometry>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+
+                <!-- badge: white halo behind triangle -->
+                <GeometryDrawing>
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="White" Thickness="3" LineJoin="Round"/>
+                    </GeometryDrawing.Pen>
+                    <GeometryDrawing.Geometry>
+                        <PathGeometry>
+                            <PathFigure StartPoint="74,0" IsClosed="True">
+                                <LineSegment Point="63,19"/>
+                                <LineSegment Point="85,19"/>
+                            </PathFigure>
+                        </PathGeometry>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+
+                <!-- badge: triangle fill -->
+                <GeometryDrawing Brush="#FAC775">
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="#BA7517" Thickness="1.5" LineJoin="Round"/>
+                    </GeometryDrawing.Pen>
+                    <GeometryDrawing.Geometry>
+                        <PathGeometry>
+                            <PathFigure StartPoint="74,0" IsClosed="True">
+                                <LineSegment Point="63,19"/>
+                                <LineSegment Point="85,19"/>
+                            </PathFigure>
+                        </PathGeometry>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+
+                <!-- exclamation bar -->
+                <GeometryDrawing>
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="#633806" Thickness="1.8"
+                             StartLineCap="Round" EndLineCap="Round"/>
+                    </GeometryDrawing.Pen>
+                    <GeometryDrawing.Geometry>
+                        <LineGeometry StartPoint="74,6" EndPoint="74,13"/>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+
+                <!-- exclamation dot -->
+                <GeometryDrawing Brush="#633806">
+                    <GeometryDrawing.Geometry>
+                        <EllipseGeometry Center="74,16.5" RadiusX="1.2" RadiusY="1.2"/>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+    <!-- ════════════════════════════════════════════════════════
+         TRIPPED  —  red bolt + white halo + no-entry circle
+         ════════════════════════════════════════════════════════ -->
+    <DrawingBrush x:Key="CbTrippedBrush"
+                  Stretch="Uniform"
+                  ViewboxUnits="Absolute"
+                  Viewbox="0,0,90,95">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+
+                <!-- white halo -->
+                <GeometryDrawing>
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="White" Thickness="8"
+                             LineJoin="Round" StartLineCap="Round" EndLineCap="Round"/>
+                    </GeometryDrawing.Pen>
+                    <GeometryDrawing.Geometry>
+                        <PathGeometry>
+                            <PathFigure StartPoint="38,0" IsClosed="True">
+                                <LineSegment Point="14,52"/>
+                                <LineSegment Point="34,52"/>
+                                <LineSegment Point="22,90"/>
+                                <LineSegment Point="66,34"/>
+                                <LineSegment Point="44,34"/>
+                            </PathFigure>
+                        </PathGeometry>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+
+                <!-- coloured bolt stroke -->
+                <GeometryDrawing>
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="#E24B4A" Thickness="5"
+                             LineJoin="Round" StartLineCap="Round" EndLineCap="Round"/>
+                    </GeometryDrawing.Pen>
+                    <GeometryDrawing.Geometry>
+                        <PathGeometry>
+                            <PathFigure StartPoint="38,0" IsClosed="True">
+                                <LineSegment Point="14,52"/>
+                                <LineSegment Point="34,52"/>
+                                <LineSegment Point="22,90"/>
+                                <LineSegment Point="66,34"/>
+                                <LineSegment Point="44,34"/>
+                            </PathFigure>
+                        </PathGeometry>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+
+                <!-- badge: white halo behind circle -->
+                <GeometryDrawing>
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="White" Thickness="5"/>
+                    </GeometryDrawing.Pen>
+                    <GeometryDrawing.Geometry>
+                        <EllipseGeometry Center="74,10" RadiusX="10" RadiusY="10"/>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+
+                <!-- badge: outline circle -->
+                <GeometryDrawing>
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="#E24B4A" Thickness="2.5"/>
+                    </GeometryDrawing.Pen>
+                    <GeometryDrawing.Geometry>
+                        <EllipseGeometry Center="74,10" RadiusX="10" RadiusY="10"/>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+
+                <!-- badge: diagonal strike -->
+                <GeometryDrawing>
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="#E24B4A" Thickness="2.5"
+                             StartLineCap="Round" EndLineCap="Round"/>
+                    </GeometryDrawing.Pen>
+                    <GeometryDrawing.Geometry>
+                        <LineGeometry StartPoint="81,3" EndPoint="67,17"/>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+    <!-- ════════════════════════════════════════════════════════
+         BASE BUTTON STYLE
+         ════════════════════════════════════════════════════════ -->
+    <Style x:Key="CbButtonBase" TargetType="Button">
+        <Setter Property="Width"           Value="28"/>
+        <Setter Property="Height"          Value="28"/>
+        <Setter Property="Padding"         Value="4"/>
+        <Setter Property="Background"      Value="#FF000000"/>
+        <Setter Property="BorderBrush"     Value="#FF333333"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Cursor"          Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="Bd"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="4"
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Bd" Property="Background" Value="#FF1A1A1A"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Bd" Property="Background" Value="#FF2A2A2A"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.35"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- ════════════════════════════════════════════════════════
+         ARMED BUTTON
+         ════════════════════════════════════════════════════════ -->
+    <Style x:Key="CbArmedButton"
+           BasedOn="{StaticResource CbButtonBase}"
+           TargetType="Button">
+        <Setter Property="ToolTip" Value="Armed — contributing active"/>
+        <Setter Property="Content">
+            <Setter.Value>
+                <Viewbox Stretch="Uniform">
+                    <Rectangle Width="20" Height="20"
+                               Fill="{StaticResource CbArmedBrush}"/>
+                </Viewbox>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- ════════════════════════════════════════════════════════
+         INDICATIVE BUTTON
+         ════════════════════════════════════════════════════════ -->
+    <Style x:Key="CbIndicativeButton"
+           BasedOn="{StaticResource CbButtonBase}"
+           TargetType="Button">
+        <Setter Property="ToolTip" Value="Indicative — limits approaching"/>
+        <Setter Property="Content">
+            <Setter.Value>
+                <Viewbox Stretch="Uniform">
+                    <Rectangle Width="20" Height="20"
+                               Fill="{StaticResource CbIndicativeBrush}"/>
+                </Viewbox>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- ════════════════════════════════════════════════════════
+         TRIPPED BUTTON
+         ════════════════════════════════════════════════════════ -->
+    <Style x:Key="CbTrippedButton"
+           BasedOn="{StaticResource CbButtonBase}"
+           TargetType="Button">
+        <Setter Property="ToolTip" Value="Tripped — limits breached, contributing halted"/>
+        <Setter Property="Content">
+            <Setter.Value>
+                <Viewbox Stretch="Uniform">
+                    <Rectangle Width="20" Height="20"
+                               Fill="{StaticResource CbTrippedBrush}"/>
+                </Viewbox>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
