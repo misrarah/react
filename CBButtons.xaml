@@ -1,0 +1,81 @@
+<!-- BASE BUTTON STYLE -->
+<Style x:Key="CbButtonBase" TargetType="Button">
+    <Setter Property="Width"           Value="28"/>
+    <Setter Property="Height"          Value="28"/>
+    <Setter Property="Padding"         Value="4"/>
+    <Setter Property="Background"      Value="#FF000000"/>
+    <Setter Property="BorderBrush"     Value="#FF333333"/>
+    <Setter Property="BorderThickness" Value="1"/>
+    <Setter Property="Cursor"          Value="Hand"/>
+    <Setter Property="Template">
+        <Setter.Value>
+            <ControlTemplate TargetType="Button">
+                <Border x:Name="Bd"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="4"
+                        Padding="{TemplateBinding Padding}">
+                    <ContentPresenter HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"/>
+                </Border>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter TargetName="Bd" Property="Background" Value="#FF1A1A1A"/>
+                    </Trigger>
+                    <Trigger Property="IsPressed" Value="True">
+                        <Setter TargetName="Bd" Property="Background" Value="#FF2A2A2A"/>
+                    </Trigger>
+                    <Trigger Property="IsEnabled" Value="False">
+                        <Setter Property="Opacity" Value="0.35"/>
+                    </Trigger>
+                </ControlTemplate.Triggers>
+            </ControlTemplate>
+        </Setter.Value>
+    </Setter>
+</Style>
+
+<!-- ARMED BUTTON -->
+<Style x:Key="CbArmedButton"
+       BasedOn="{StaticResource CbButtonBase}"
+       TargetType="Button">
+    <Setter Property="ToolTip" Value="Armed — contributing active"/>
+    <Setter Property="Content">
+        <Setter.Value>
+            <Viewbox Stretch="Uniform">
+                <Rectangle Width="20" Height="20"
+                           Fill="{StaticResource CbArmedBrush}"/>
+            </Viewbox>
+        </Setter.Value>
+    </Setter>
+</Style>
+
+<!-- INDICATIVE BUTTON -->
+<Style x:Key="CbIndicativeButton"
+       BasedOn="{StaticResource CbButtonBase}"
+       TargetType="Button">
+    <Setter Property="ToolTip" Value="Indicative — limits approaching"/>
+    <Setter Property="Content">
+        <Setter.Value>
+            <Viewbox Stretch="Uniform">
+                <Rectangle Width="20" Height="20"
+                           Fill="{StaticResource CbIndicativeBrush}"/>
+            </Viewbox>
+        </Setter.Value>
+    </Setter>
+</Style>
+
+<!-- TRIPPED BUTTON -->
+<Style x:Key="CbTrippedButton"
+       BasedOn="{StaticResource CbButtonBase}"
+       TargetType="Button">
+    <Setter Property="ToolTip" Value="Tripped — limits breached, contributing halted"/>
+    <Setter Property="Content">
+        <Setter.Value>
+            <Viewbox Stretch="Uniform">
+                <Rectangle Width="20" Height="20"
+                           Fill="{StaticResource CbTrippedBrush}"/>
+            </Viewbox>
+        </Setter.Value>
+    </Setter>
+</Style>
